@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportBook — бронирование залов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <h1>SportBook</h1>
+        <p>Забронируйте спортивный зал для своей команды</p>
+
+        <nav>
+            <a href="#halls">Наши залы</a>
+            <a href="#booking">Забронировать</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Список залов -->
+        <section id="halls">
+            <h2>Наши залы</h2>
+
+            <article>
+                <h3>Футбольный зал</h3>
+                <p>Крытая площадка для мини-футбола.</p>
+                <p>Стоимость: 10 000 ₸ в час</p>
+            </article>
+
+            <article>
+                <h3>Волейбольный зал</h3>
+                <p>Площадка с сеткой и спортивным покрытием.</p>
+                <p>Стоимость: 8 000 ₸ в час</p>
+            </article>
+        </section>
+
+        <!-- Форма бронирования -->
+        <section id="booking">
+            <h2>Бронирование зала</h2>
+
+            <form id="booking-form">
+                <p>Итого: <strong id="total-price">0 ₸</strong></p>
+                <button type="submit">Забронировать</button>
+                <p id="booking-message" role="status"></p>
+                    <label for="hall">Выберите зал:</label><br>
+                    <select id="hall" name="hall" required>
+                        <option value="">Не выбран</option>
+                        <option value="football">Футбольный зал</option>
+                        <option value="volleyball">Волейбольный зал</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="date">Дата:</label><br>
+                    <input type="date" id="date" name="date" required>
+                </p>
+
+                <p>
+                    <label for="time">Время начала:</label><br>
+                    <input type="time" id="time" name="time" required>
+                </p>
+
+                <p>
+                    <label for="hours">Количество часов:</label><br>
+                    <input type="number" id="hours" name="hours"
+                           min="1" max="8" value="1" required>
+                </p>
+
+                <p>
+                    <label for="name">Ваше имя:</label><br>
+                    <input type="text" id="name" name="name"
+                           placeholder="Введите имя" required>
+                </p>
+
+                <p>
+                    <label for="phone">Номер телефона:</label><br>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="+7..." required>
+                </p>
+
+            </form> 
+        </section>
+
+        <section id="my-bookings">
+    <h2>Мои бронирования</h2>
+    <div id="bookings-list"></div>
+
+        <!-- Контакты -->
+        <section id="contacts">
+            <h2>Контакты</h2>
+            <p>Улица Пушкина дом колотушкина 6/7
+                Номер телефона: +7 776 533 8576.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 SportBook</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
